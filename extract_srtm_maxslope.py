@@ -2,8 +2,8 @@ import numpy as np
 import memmap_extraction as me
 
 infile = '/nobackupp6/nexprojects/CMS-ALOS/srtm1sec_mosaic/global_srtm3_aster_maxdegreeslope_3sec.byt'
-csvfile = '/u/yyu1/allometry_data_input/global_glas_2003_2008_alltypes_formatted_agb_v6_srtmstdev.csv'
-outfile = '/u/yyu1/allometry_data_input/global_glas_2003_2008_alltypes_formatted_agb_v6_srtmstdev_maxslope.csv'
+csvfile = '/nobackupp6/nexprojects/CMS-ALOS/glas/global_glas_2003_2008_alltypes_formatted_agb_v6_srtmstdev.csv'
+outfile = '/nobackupp6/nexprojects/CMS-ALOS/glas/global_glas_2003_2008_alltypes_formatted_agb_v6_srtmstdev_maxslope.csv'
 
 datatype = np.uint8
 
