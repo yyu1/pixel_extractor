@@ -29,5 +29,6 @@ with open(outfile, 'w') as output:
 
 		index = 0
 		for line in input:
+			print(extraction_values[index])
 			output.write(line+','+str(extraction_values[index]))
 			index = index + 1
