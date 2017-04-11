@@ -19,4 +19,4 @@ def memmap_extraction(inFileName, data_type, in_dim_x, in_dim_y, extract_rows, e
 	out_val[:] = -1   #use -1 as missing value (out of bounds)
 
 	out_val[inbound_mask] = image_data[extract_rows[inbound_mask], extract_columns[inbound_mask]]
-	
+	return out_val
