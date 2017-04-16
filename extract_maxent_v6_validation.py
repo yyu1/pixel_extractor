@@ -1,5 +1,5 @@
 import numpy as np
-import memmap_extraction as me
+import file_randomread_extraction as frr
 
 infile = '/nobackupp6/nexprojects/CMS-ALOS/maxent/output/100m_v6/combined/global_maxent_agb_combined_v6.int'
 csvfile = '/nobackup/yyu1/samples/agb_train_v6/maxent_train_agb_v6_afr_valid.csv'
@@ -24,15 +24,15 @@ ULY = np.float64(8450777.6177)
 columns = ((lons+ULX)/pixsize).astype(np.int32)
 rows = ((ULY-lats)/pixsize).astype(np.int32)   #image starts at 76 degrees north
 
-extraction_values = me.memmap_extraction(infile, datatype, xdim, ydim, rows, columns)
+extraction_values = frr.file_randomread_extraction(infile, datatype, xdim, ydim, rows, columns)
 
 #Read lines of input csv and append the extracted values
 with open(outfile, 'w') as output:
 	with open(csvfile) as input:
 		header = next(input)
-		output.write(header+',\'srtm_stdev\'')
+		output.write(header.strip()+',\'srtm_stdev\'\n')
 
 		index = 0
 		for line in input:
-			output.write(line+','+str(extraction_values[index]))
+			output.write(line.strip()+','+str(extraction_values[index])+'\n')
 			index = index + 1
